@@ -217,11 +217,9 @@ img {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  .home__blob-img {
-    width: 280px; /* Smaller size for mobile */
-    transform: translate(8%, -8%); /* Adjusted position for mobile */
-  }
+.home__blob-img {
+  width: 360px;
+  transform: translate(5%, -10%); /* Even more left and higher */
 }
 
 @media screen and (max-width: 768px) {
@@ -235,6 +233,8 @@ img {
 
   .home__blob-img {
     width: 280px; /* Adjust for smaller screens */
+    transform: translate(8%, -8%); /* Adjusted position for mobile */
+
   }
 }
 
