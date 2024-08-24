@@ -219,7 +219,7 @@ img {
 
 .home__blob-img {
   width: 360px;
-  transform: translate(5%, -10%); /* Even more left and higher */
+  transform: translate(3%, -5%); /* Even more left and higher */
 }
 
 @media screen and (max-width: 768px) {
