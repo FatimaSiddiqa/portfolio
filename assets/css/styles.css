@@ -44,7 +44,7 @@ html {
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
+  margin: calc(var(--header-height) - 1rem) 0 0 0; 
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
@@ -186,8 +186,10 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 0 2rem;
+  padding: 0; /* Removed padding completely */
+  margin-top: -2rem; /* Added negative margin to pull everything up */
 }
+
 
 @keyframes slideFromTop {
   0% {
@@ -208,12 +210,14 @@ img {
 .home__data {
   flex: 1 1 300px;
   animation-delay: 0.2s;
+  margin-top: -2rem; /* Pull text up */
 }
 
 .home__title {
   font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
+  margin-bottom: var(--mb-2); /* Reduced from mb-5 */
 }
+
 
 .home__title-color {
   color: var(--first-color);
@@ -222,34 +226,35 @@ img {
 .home__img {
   flex: 1 1 300px;
   max-width: 450px;
-  margin: 0 auto;
-  animation-delay: 0.5s;
+  margin: -3rem auto 0; /* Negative top margin to pull up */
 }
 
 .home__blob {
   fill: var(--first-color);
   width: 100%;
   height: auto;
+  transform: translateY(-2rem); 
 }
 
+/* Keep all other styles the same */
 .home__blob-img {
   width: 360px;
-  transform: translate(3%, -5%); /* Even more left and higher */
+  transform: translate(3%, 0);
 }
+
 
 @media screen and (max-width: 768px) {
   .home {
-    flex-direction: column-reverse;
+    margin-top: 0;
   }
 
   .home__img {
-    margin-bottom: 2rem;
+    margin-top: -2rem;
   }
 
   .home__blob-img {
-    width: 280px; /* Adjust for smaller screens */
-    transform: translate(8%, -8%); /* Adjusted position for mobile */
-
+    width: 280px;
+    transform: translate(8%, 0);
   }
 }
 
@@ -444,17 +449,21 @@ img {
 
 
 /* ===== MEDIA QUERIES=====*/
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 768px) {
   .home {
-    row-gap: 2rem;
-  }
-  .home__img {
-    width: 200px;
+    padding: 2rem 0; /* Reduced padding */
   }
 }
-@media screen and (min-width: 576px) {
+
+@media screen and (min-width: 992px) {
   .home {
-    padding: 4rem 0 2rem;
+    padding: 3rem 0; /* Reduced padding */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home {
+    padding: 6rem 0 2rem; /* Reduced from 10rem */
   }
   .home__social {
     padding-top: 0;
@@ -493,6 +502,7 @@ img {
     justify-items: center;
   }
 }
+
 @media screen and (min-width: 768px) {
   body {
     margin: 0;
